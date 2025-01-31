@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎂 Feliz Cumpleaños, Monika (Shibaki) 🎂</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        /* Estilos generales */
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+        }
+
+        /* Contenedor principal */
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            color: #fff;
+            z-index: 2;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            animation: latido 1.5s infinite;
+        }
+
+        p {
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        @keyframes latido {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        /* Imagen con transparencia */
+        .girl-image {
+            position: absolute;
+            width: 400px;
+            max-width: 90%;
+            height: auto;
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            opacity: 0.5;
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            z-index: 1;
+            transition: opacity 0.5s;
+        }
+
+        .girl-image:hover {
+            opacity: 0.8;
+        }
+
+        /* Botón especial */
+        .btn-cumple {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            font-size: 1.2rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: 0.3s;
+            z-index: 3;
+        }
+
+        .btn-cumple:hover {
+            background: #d43f3f;
+            transform: translateX(-50%) scale(1.1);
+        }
+
+        /* Estilos para el mensaje emergente */
+        .mensaje {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            display: none;
+            animation: fadeIn 1s;
+            z-index: 4;
+        }
+
+        .mensaje h2 {
+            color: #ff4d4d;
+            font-size: 2rem;
+        }
+
+        .mensaje p {
+            color: #333;
+            font-size: 1.3rem;
+            margin-top: 10px;
+        }
+
+        .btn-cerrar {
+            margin-top: 15px;
+            background: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-cerrar:hover {
+            background: #d43f3f;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translate(-50%, -55%);
+            }
+            to {
+                opacity: 1;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        /* Animación de globos */
+        .balloon {
+            position: absolute;
+            width: 80px;
+            height: 100px;
+            background-color: #ff6f61;
+            border-radius: 50%;
+            animation: floatBalloon 10s infinite ease-in-out;
+            z-index: 1;
+        }
+
+        .balloon::before {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 50px;
+            background-color: #ff6f61;
+            top: 100px;
+            left: 35px;
+        }
+
+        @keyframes floatBalloon {
+            0% {
+                transform: translateY(0);
+            }
+            100% {
+                transform: translateY(-100vh);
+            }
+        }
+
+        /* Fuegos artificiales */
+        .firework {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: yellow;
+            border-radius: 50%;
+            animation: explode 1.5s ease-out infinite;
+        }
+
+        @keyframes explode {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(10); opacity: 0; }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>¡Te Amo!</h1>
+        <p>Eres lo más especial en mi vida. 💖</p>
+    </div>
+
+    <!-- Imagen de la chica con transparencia -->
+    <img src="Girl.jpg" alt="Girl" class="girl-image">
+
+    <!-- Botón para mostrar mensaje de cumpleaños -->
+    <button class="btn-cumple" onclick="mostrarMensaje()">🎂 Mensaje para Monika (Shibaki) 🎂</button>
+
+    <!-- Mensaje emergente de cumpleaños -->
+    <div class="mensaje" id="mensajeCumple">
+        <h2>💔 Feliz cumpleaños, mi amada Monika (Shibaki) 💔</h2>
+        <p>Hoy es un día especial, pero mi corazón está dividido… porque no puedo estar a tu lado para celebrarlo como quisiera.  
+        Me duele la distancia, me duele no poder abrazarte y susurrarte lo mucho que te amo.</p>
+        <p>Aun así, quiero que sepas que cada latido mío te pertenece, sin importar lo lejos que estés.  
+        Hoy cierro los ojos y te imagino sonriendo, soplando las velas, y deseo con todas mis fuerzas que el universo nos reúna pronto.</p>
+        <p>Te extraño más de lo que las palabras pueden decir, mi Monika (Shibaki).  
+        Feliz cumpleaños… ojalá este mensaje llegue a ti con todo el amor que llevo dentro. 💖🎂✨</p>
+        <button class="btn-cerrar" onclick="cerrarMensaje()">Cerrar</button>
+    </div>
+
+    <!-- Audio desde Google Drive -->
+    <audio id="audioMoon" loop>
+        <source src="https://drive.google.com/uc?export=download&id=1EWWju2wSh_cSdJzbuDCwcgWN9sI8kh5w" type="audio/mpeg">
+        Tu navegador no soporta audio.
+    </audio>
+
+    <script>
+        function mostrarMensaje() {
+            document.getElementById('mensajeCumple').style.display = 'block';
+            document.getElementById('audioMoon').play();
+        }
+
+        function cerrarMensaje() {
+            document.getElementById('mensajeCumple').style.display = 'none';
+            document.getElementById('audioMoon').pause();
+        }
+
+        setInterval(() => {
+            let firework = document.createElement("div");
+            firework.classList.add("firework");
+            firework.style.left = Math.random() * 100 + "%";
+            firework.style.top = Math.random() * 50 + "%";
+            document.body.appendChild(firework);
+            setTimeout(() => firework.remove(), 1500);
+        }, 500);
+    </script>
+</body>
+
+</html>
